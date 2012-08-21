@@ -29,8 +29,9 @@ RDEPEND="${DEPEND}"
 src_install() {
 	DD="${D}/usr"
 	cd ocre
-	tar xzvf ocre-decsWood*.tgz
+	tar zxf ocre-decsWood*.tgz
 	emake DESTDIR="${DD}" depend
 	emake DESTDIR="${DD}" ocre
 	emake DESTDIR="${DD}" install installman
+	tar zxf ocre-decsWood*.tgz -C "${DD}/share/ocre"
 }
